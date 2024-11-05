@@ -31,23 +31,44 @@
     header{
         flex: 1 1 100vw;
         height: 100px;
+        /*flex-wrap: wrap;*/
     }
 
+    header #logo{
+        flex: 0 1 200px;
+        background: #c9c9c9;
+    }
+
+    #abrirMenu, #fecharMenu{
+        border: none;
+        background: none;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 0px 5px 0px 5px;
+        display: none; /*oculta a exibição*/
+    }
     nav{
         flex: 1 1 100vw;
         height: 100px;
         align-items: center; /*vertical*/
-        justify-content: center; /*horizontal*/
+        justify-content: flex-end; /*horizontal*/
     }
 
     nav a{
-        margin: 5%;
+        margin: 3%;
         font-size: 15pt;
+    }
+
+    a{
+        text-decoration: none;
+        color: inherit; /*cor padrão do elemento pai*/
     }
 
     main{
         flex: 20 1 500px;
-        height: calc(100vh - 330px); /*aqui começou a gambi*/
+        height: calc(100vh - 224px); /*aqui começou a gambi*/
+        flex-wrap: wrap;
+        overflow: auto;
     }
 
     aside{
@@ -61,7 +82,7 @@
 
     @media screen and (max-width: 992px) {
         main{
-            height: calc(100vh - 436px);
+            height: calc(100vh - 330px);
         }
         aside{
             flex: 1 1 100vw;
@@ -69,22 +90,54 @@
         }
     }
 
-    a{
-        text-decoration: none;
-        color: inherit; /*cor padrão do elemento pai*/
+    @media screen and (max-width: 717px) {
+        #abrirMenu, #fecharMenu{
+            display: block;
+        }
+
+        #abrirMenu{
+            margin-left: auto;
+        }
+        nav{
+            position: fixed;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #8B4513;
+            margin: 0;
+            display: none;
+        }
     }
     </style>
 </head>
 <body>
-    <header>Cabecalho</header>
-    <nav>
-    <a href="#">Início</a>    
-    <a href="#">Produtos</a>    
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
-    </nav>
-    <main>Principal</main>
+    <header>
+        <a href="#" id="logo">LOGO</a>
+        <button id="abrirMenu">&#9776;</button> <!--Navegador vê com os 3 tracinhos-->
+        <nav id="menu">
+            <button id="fecharMenu">X</button>
+            <a href="#">Início</a>    
+            <a href="#">Produtos</a>    
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+            </nav>
+    </header>
+    
     <aside>Relacionado</aside>
+    <main>Principal</main>
     <footer>Rodape</footer>
+
+<script type="text/javascript">
+
+    abrirMenu.addEventListener('click', () =>{
+        menu.style.display = 'flex';
+    })
+
+    fecharMenu.addEventListener('click', () =>{
+        menu.removeAttribute('style');
+    })
+</script>
 </body>
 </html>
