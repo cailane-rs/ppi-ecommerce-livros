@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+    <style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /*inclui as bordas e o preenchimento dentro dos calculos de width e height.*/
+    }
+
+    body{
+        display: flex;
+        flex-wrap: wrap; /*quebra de linha*/
+        margin: 3px;
+        flex: 1 1 100vw; /*100% da janela de visualização*/
+        /*flex-grow: crescer, padrão 0, se 1, todos os filhos tentarão ter a mesma largura */
+        /*flex-shrink: reduzir, padrão 1, para caber no container. Se 0, não vai reduzir. Agora se maior que 1, vai reduzir X vezes mais que os outros elementos. */
+        /*flex-basis: tamanho inicial do item, padrão é "auto", assim o item se adapta ao seu próprio tamanho de conteúdo. Se 0, tenta manter todos com mesma largura*/
+
+    }
+    header, nav, main, aside, footer{
+        display: flex;
+        background: #FDFD96;
+        margin: 3px;
+    }
+
+    header{
+        flex: 1 1 100vw;
+        height: 100px;
+    }
+
+    nav{
+        flex: 1 1 100vw;
+        height: 100px;
+    }
+
+    main{
+        flex: 20 1 500px;
+        height: calc(100vh - 330px); /*aqui começou a gambi*/
+    }
+
+    aside{
+        flex: 1 1 200px;
+    }
+
+    footer{
+        flex: 1 1 100vw;
+        height: 100px;
+    }
+
+    @media screen and (max-width: 992px) {
+        main{
+            height: calc(100vh - 436px);
+        }
+        aside{
+            flex: 1 1 100vw;
+            height: 100px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>Cabecalho</header>
+    <nav>
+    <a href="#">Início</a>    
+    <a href="#">Produtos</a>    
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+    </nav>
+    <main>Principal</main>
+    <aside>Relacionado</aside>
+    <footer>Rodape</footer>
+</body>
+</html>
