@@ -4,113 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
-    <style>
-
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box; /*inclui as bordas e o preenchimento dentro dos calculos de width e height.*/
-    }
-
-    body{
-        display: flex;
-        flex-wrap: wrap; /*quebra de linha*/
-        margin: 3px;
-        flex: 1 1 100vw; /*100% da janela de visualização*/
-        /*flex-grow: crescer, padrão 0, se 1, todos os filhos tentarão ter a mesma largura */
-        /*flex-shrink: reduzir, padrão 1, para caber no container. Se 0, não vai reduzir. Agora se maior que 1, vai reduzir X vezes mais que os outros elementos. */
-        /*flex-basis: tamanho inicial do item, padrão é "auto", assim o item se adapta ao seu próprio tamanho de conteúdo. Se 0, tenta manter todos com mesma largura*/
-
-    }
-    header, nav, main, aside, footer{
-        display: flex;
-        background: #FDFD96;
-        margin: 3px;
-    }
-
-    header{
-        flex: 1 1 100vw;
-        height: 100px;
-        /*flex-wrap: wrap;*/
-    }
-
-    header #logo{
-        flex: 0 1 200px;
-        background: #c9c9c9;
-    }
-
-    #abrirMenu, #fecharMenu{
-        border: none;
-        background: none;
-        font-size: 30px;
-        font-weight: bold;
-        padding: 0px 5px 0px 5px;
-        display: none; /*oculta a exibição*/
-    }
-    nav{
-        flex: 1 1 100vw;
-        height: 100px;
-        align-items: center; /*vertical*/
-        justify-content: flex-end; /*horizontal*/
-    }
-
-    nav a{
-        margin: 3%;
-        font-size: 15pt;
-    }
-
-    a{
-        text-decoration: none;
-        color: inherit; /*cor padrão do elemento pai*/
-    }
-
-    main{
-        flex: 20 1 500px;
-        height: calc(100vh - 224px); /*aqui começou a gambi*/
-        flex-wrap: wrap;
-        overflow: auto;
-    }
-
-    aside{
-        flex: 1 1 200px;
-    }
-
-    footer{
-        flex: 1 1 100vw;
-        height: 100px;
-    }
-
-    @media screen and (max-width: 992px) {
-        main{
-            height: calc(100vh - 330px);
-        }
-        aside{
-            flex: 1 1 100vw;
-            height: 100px;
-        }
-    }
-
-    @media screen and (max-width: 717px) {
-        #abrirMenu, #fecharMenu{
-            display: block;
-        }
-
-        #abrirMenu{
-            margin-left: auto;
-        }
-        nav{
-            position: fixed;
-            flex-direction: column;
-            width: 100vw;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
-            background: #8B4513;
-            margin: 0;
-            display: none;
-        }
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
     <header>
@@ -129,15 +23,6 @@
     <main>Principal</main>
     <footer>Rodape</footer>
 
-<script type="text/javascript">
-
-    abrirMenu.addEventListener('click', () =>{
-        menu.style.display = 'flex';
-    })
-
-    fecharMenu.addEventListener('click', () =>{
-        menu.removeAttribute('style');
-    })
-</script>
+<script type="text/javascript" src="assets/script.js"></script>
 </body>
 </html>
